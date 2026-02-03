@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Forever Mine 💘</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff5f8a,#2b0015);
+  font-family:Arial,sans-serif;
+  color:white;
+}
+.card{
+  background:rgba(0,0,0,0.5);
+  padding:30px;
+  width:360px;
+  border-radius:18px;
+  text-align:center;
+}
+input,button{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+}
+button{
+  background:#ff3e6c;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+#proposal{display:none;}
+.btn-area{
+  position:relative;
+  height:150px;
+  margin-top:20px;
+}
+#yesBtn{background:#3adb76;}
+#noBtn{
+  background:#ff4b4b;
+  position:absolute;
+  left:120px;
+  top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div id="login">
+    <h2>💌 Secret Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Enter ❤️</button>
+  </div>
+
+  <div id="proposal">
+    <h2>Will you be my Valentine forever? 💖</h2>
+    <div class="btn-area">
+      <button id="yesBtn" onclick="yes()">YES 😍</button>
+      <button id="noBtn">NO 🙄</button>
+    </div>
+    <p style="margin-top:25px;font-style:italic;">
+      “Now you can’t escape… no one will save you from me.”
+    </p>
+  </div>
+</div>
+
+<script>
+function login(){
+  const u=document.getElementById("username").value.trim();
+  const p=document.getElementById("password").value.trim();
+
+  if(u==="roszkanna_1020" && p==="jilluenalagi"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("proposal").style.display="block";
+  }else{
+    alert("Wrong username or password 💔");
+  }
+}
+
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  const area=document.querySelector(".btn-area");
+  noBtn.style.left=Math.random()*(area.clientWidth-80)+"px";
+  noBtn.style.top=Math.random()*(area.clientHeight-40)+"px";
+});
+
+function yes(){
+  document.querySelector(".btn-area").innerHTML=
+    "<h2>💘 You’re mine forever 💘</h2>";
+}
+</script>
+
+</body>
+</html>
